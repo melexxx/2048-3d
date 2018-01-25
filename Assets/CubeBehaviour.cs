@@ -83,19 +83,19 @@ public class CubeBehaviour : MonoBehaviour
             {
                 float ratio = (destPos - transform.position).magnitude / (destPos - oldPos).magnitude;
                 if (ratio > 0.7)
-                    transform.localScale = ratio * new Vector3(1.3f, 1.3f, 1.3f);
+                    transform.localScale = ratio * new Vector3(1.0f, 1.0f, 1.0f);
             }
             else
             {
                 float ratio = (transform.position - oldPos).magnitude / (destPos - oldPos).magnitude;
                 if (ratio > 0.7)
-                    transform.localScale = ratio * new Vector3(1.3f, 1.3f, 1.3f);
+                    transform.localScale = ratio * new Vector3(1.0f, 1.0f, 1.0f);
             }
         }
         else if (oldPos != transform.position)
         {
             oldPos = transform.position;
-            transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
+            transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             GameBehaviour.movingCount--;
             if (destCube != null)
             {
@@ -104,7 +104,7 @@ public class CubeBehaviour : MonoBehaviour
                 destCube = null;
                 merging = false;
                 animationMerging = true;
-                transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+                transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 if (value == 2048 && !GameBehaviour.won)
                     GameObject.Find("Game Object").GetComponent<GameBehaviour>().WinGame();
             }
@@ -117,7 +117,7 @@ public class CubeBehaviour : MonoBehaviour
                 transform.localScale = newScale;
             else
             {
-                transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
+                transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 spawning = false;
                 animationMerging = false;
             }
