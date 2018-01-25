@@ -496,7 +496,7 @@ public class GameBehaviour : MonoBehaviour
         Color col;
         ColorUtility.TryParseHtmlString("#EDC53FFF", out col);
         notificationPanel.GetComponent<Image>().color = col;
-        notificationPanel.GetComponentInChildren<Text>().text = "Congratulations, you reached 2048! You can keep going...";
+        notificationPanel.GetComponentInChildren<Text>().text = "Congratulations, you reached 2048! That was easy, you also reach 8196 and 16384?";
         StartCoroutine(SlideNotification());
     }
 
